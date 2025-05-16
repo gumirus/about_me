@@ -51,8 +51,7 @@ export default function Footer() {
       >
         <li>
           {' '}
-          {/* Добавлен недостающий li */}
-          <a className="link" href="https://github.com/gumirus">
+          <a className="link" href="https://github.com/gumirus/about_me">
             GitHub
           </a>
         </li>
