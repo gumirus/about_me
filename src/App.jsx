@@ -4,7 +4,7 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Education from './components/Education'
 import Footer from './components/Footer'
-import useSmoothScroll from './components/useSmoothScroll.js'
+import useSmoothScroll from './hooks/useSmoothScroll'
 
 export default function App() {
   useSmoothScroll()
@@ -17,8 +17,8 @@ export default function App() {
           <Skills />
           <Projects />
           <Education />
-          <Footer />
         </main>
+        <Footer />
       </div>
     </div>
   )
