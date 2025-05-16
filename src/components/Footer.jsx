@@ -62,12 +62,8 @@ export default function Footer() {
           </a>
         </li>
         <li>
-          <a className="link" href="https://rs.school/">
-            <img
-              className="ResultUniversity-img"
-              alt="RSchool logo"
-              src="https://rs.school/_next/static/media/rss-logo.c19ce1b4.svg"
-            />
+          <a className="link" href="https://t.me/Ruslan_Rascheed">
+            Telegram
           </a>
         </li>
       </ul>
