@@ -1,27 +1,18 @@
 export default function Projects() {
   return (
-    <section>
-      <h2 className="text-2xl font-semibold mb-2">Projects</h2>
-      <ul className="list-disc pl-5">
-        <li>
-          <a
-            href="https://gumirus.github.io/rsschool-cv/"
-            className="text-blue-500 underline"
-            target="_blank"
-          >
-            RSSchool CV
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://github.com/gumirus"
-            className="text-blue-500 underline"
-            target="_blank"
-          >
-            GitHub Repos
-          </a>
-        </li>
-      </ul>
+    <section className="section-content" id="projects">
+      <h2 className="text-xl font-semibold">Projects</h2>
+      <div className="section-info">
+        <div className="section-subinfo">
+          <div className="circle" />
+          <div className="info-text">
+            <a className="link cv-link" href="https://gumirus.github.io/MySite/StudentCard.html">My site</a><br />
+            <a className="link cv-link" href="https://gumirus.github.io/First-day/">First-day</a><br />
+            <a className="link cv-link" href="https://gumirus.github.io/weather_search/">Weather search</a><br />
+            <a className="link cv-link" href="https://gumirus.github.io/third_day/">Third day</a>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }

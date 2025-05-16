@@ -1,14 +1,15 @@
 export default function Skills() {
   return (
-    <section>
-      <h2 className="text-2xl font-semibold mb-2">Skills</h2>
-      <ul className="list-disc pl-5">
-        <li>HTML5, CSS3, SCSS</li>
-        <li>JavaScript, TypeScript</li>
-        <li>React, Redux</li>
-        <li>Git, GitHub</li>
-        <li>Figma, Adobe XD</li>
-      </ul>
+    <section className="section-content" id="skills">
+      <h2 className="text-xl font-semibold">Skills</h2>
+      <div className="section-info">
+        <div className="section-subinfo">
+          <div className="circle" />
+          <ul className="info-text skills-ul">
+            <li>Git, HTML, CSS</li>
+          </ul>
+        </div>
+      </div>
     </section>
   )
 }

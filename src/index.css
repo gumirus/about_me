@@ -1,3 +1,254 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --font-family: 'Georgia', sans-serif;
+  --main-yellow: #f3cf1d;
+  --main-green: #5ebf09d3;
+  --main-card: #fafafa;
+  --main-bg: #e9ebd7;
+  --blue: #0817f0;
+  --black: #191717;
+}
+
+/* Utility for reusable layout, not Tailwindable */
+.body-content {
+  font-family: var(--font-family);
+  background-color: var(--main-bg);
+  color: var(--black);
+  padding: 10px 11%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: stretch;
+  gap: 130px;
+  font-size: 16px;
+}
+
+/* Apply this class in a top-level div like <main className="body-content"> */
+
+.link {
+  @apply text-[var(--black)] no-underline;
+}
+.link:hover,
+.link:active {
+  @apply text-[var(--black)];
+}
+
+.link-list,
+.contact-list {
+  @apply flex flex-row justify-start items-center gap-2 list-none;
+}
+
+.skills-ul {
+  @apply list-none pl-0;
+}
+
+.header-info {
+  @apply flex flex-row justify-between items-center mt-5;
+}
+
+.main-content {
+  @apply flex flex-col gap-[50px] justify-start items-stretch;
+}
+
+.section-content {
+  @apply flex flex-col justify-start items-center;
+}
+
+.section-info {
+  background-color: var(--main-card);
+  @apply flex flex-col rounded-2xl p-8 relative min-w-[60%] max-w-[60%];
+}
+
+.section-subinfo {
+  @apply flex gap-1;
+}
+
+.info-text {
+  @apply flex flex-col flex-[1_1_calc(100%-12px)];
+}
+
+.circle {
+  background-color: var(--main-yellow);
+  @apply rounded-full h-3 flex-[1_1_12px] mt-1;
+}
+
+.greetings {
+  @apply flex flex-col items-start justify-start gap-2;
+}
+
+.section-greetings {
+  @apply flex flex-row justify-between items-start;
+}
+
+.main-img {
+  @apply w-[330px] h-[330px] z-[3];
+}
+
+.img-container {
+  @apply relative;
+}
+.img-container::before {
+  background-color: var(--main-green);
+  content: '';
+  position: absolute;
+  top: 30%;
+  right: 0;
+  width: 120%;
+  height: 70%;
+  border-radius: 20px;
+  z-index: -1;
+}
+.img-container::after {
+  background-color: var(--main-yellow);
+  content: '';
+  position: absolute;
+  width: 135%;
+  height: 230px;
+  border-radius: 20px;
+  z-index: -2;
+  right: 0;
+  top: 20%;
+}
+
+.footer-content {
+  @apply flex flex-row justify-between items-center mt-10 mb-8;
+}
+
+.ResultUniversity-img {
+  @apply h-[22px];
+}
+
+.greetings-first-line {
+  @apply font-bold text-sm text-[var(--blue)];
+}
+.greetings-second-line {
+  @apply text-[var(--blue)];
+}
+.greetings-third-line {
+  @apply font-light text-sm;
+}
+
+.info-text-header {
+  @apply font-semibold text-[1.2em];
+}
+.info-text-date {
+  @apply text-sm font-medium text-[var(--blue)];
+}
+.info-text-description {
+  @apply text-justify;
+}
+
+.cv-link {
+  @apply underline;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1028px) {
+  body,
+  ul,
+  h1 {
+    font-size: 15px;
+    padding: 15px;
+  }
+
+  .header-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .img-container::before {
+    width: 110%;
+    height: 60%;
+    top: 25%;
+  }
+
+  .img-container::after {
+    width: 120%;
+    height: 200px;
+    top: 15%;
+  }
+}
+
+@media (max-width: 870px) {
+  body,
+  ul,
+  h1,
+  h2 {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .header-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .img-container::before {
+    width: 100%;
+    height: 60%;
+    top: 20%;
+  }
+
+  .img-container::after {
+    width: 100%;
+    height: 150px;
+    top: 10%;
+  }
+}
+
+@media (max-width: 750px) {
+  body,
+  ul,
+  h1,
+  h2 {
+    font-size: 13px;
+    padding: 5px;
+  }
+
+  .header-info {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .main-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .img-container::before {
+    width: 90%;
+    height: 40%;
+    top: 35%;
+  }
+
+  .img-container::after {
+    width: 90%;
+    height: 120px;
+    top: 15%;
+  }
+
+  .link-list,
+  .contact-list,
+  .footer-content {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .section-greetings {
+    flex-direction: column;
+    align-items: start;
+  }
+}
