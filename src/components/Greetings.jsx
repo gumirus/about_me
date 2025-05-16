@@ -3,25 +3,32 @@ export default function Greetings() {
     <section className="section-greetings">
       <div className="greetings">
         <span className="greetings-first-line">
-          I am Ruslan Gumirov. Frontend developer
+          I'm Ruslan Gumirov. Full-Stack Developer
         </span>
         <h1>
-          I speak a little Greek.
+          Crafting digital experiences
           <br />
-          Now it’s time for <span className="greetings-second-line">
-            HTML
-          </span>, <span className="greetings-second-line">CSS</span>
+          from <span className="greetings-second-line">Frontend</span> to
+          <span className="greetings-second-line"> Backend</span>.
           <br />
-          and <span className="greetings-second-line">JS</span>.
+          Mastering core web trilogy:
+          <span className="greetings-second-line">HTML</span>,
+          <span className="greetings-second-line">CSS</span>,
+          <span className="greetings-second-line">JS</span>.
         </h1>
         <span className="greetings-third-line">
-          Developer who is looking for interesting projects!
-          <br />I am from Russia.
+          <span className="greetings-bold-line">
+            Synergy University student | Web Development
+          </span>
+          <br />
+          <span className="greetings-bold-line">
+            Based in Russia, open to global opportunities
+          </span>
         </span>
       </div>
       <div className="img-container">
         <img
-          alt="Profile photo of Ruslan Gumirov"
+          alt="Full-stack developer Ruslan Gumirov"
           src="/about_me/img/cv-photo.png"
           className="main-img"
         />
