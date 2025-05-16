@@ -17,8 +17,8 @@ export default function App() {
           <Skills />
           <Projects />
           <Education />
+          <Footer />
         </main>
-        <Footer />
       </div>
     </div>
   )
