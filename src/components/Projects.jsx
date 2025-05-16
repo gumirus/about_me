@@ -9,7 +9,8 @@ export default function Projects() {
             <a className="link cv-link" href="https://gumirus.github.io/MySite/StudentCard.html">My site</a><br />
             <a className="link cv-link" href="https://gumirus.github.io/First-day/">First-day</a><br />
             <a className="link cv-link" href="https://gumirus.github.io/weather_search/">Weather search</a><br />
-            <a className="link cv-link" href="https://gumirus.github.io/third_day/">Third day</a>
+            <a className="link cv-link" href="https://gumirus.github.io/third_day/">Third day</a><br />
+            <a className="link cv-link" href="https://gumirus.github.io/todo-zadanie/">Todos</a>
           </div>
         </div>
       </div>
