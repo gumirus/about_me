@@ -22,7 +22,7 @@ export default function Greetings() {
       <div className="img-container">
         <img
           alt="Profile photo of Ruslan Gumirov"
-          src="/img/cv-photo.png"
+          src="./public/img/cv-photo.png"
           className="main-img"
         />
       </div>
