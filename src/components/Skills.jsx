@@ -6,7 +6,10 @@ export default function Skills() {
         <div className="section-subinfo">
           <div className="circle" />
           <ul className="info-text skills-ul">
-            <li>Git, HTML, CSS</li>
+            <li>
+              Git, HTML, CSS, JavaScript, TypeScript, React, Python, PHP,
+              Django, Gulp, Webpack, Vite, Figma, Pixo
+            </li>
           </ul>
         </div>
       </div>
