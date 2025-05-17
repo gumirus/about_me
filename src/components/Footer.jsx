@@ -50,14 +50,13 @@ export default function Footer() {
         aria-hidden={!isMenuOpen}
       >
         <li>
-          {' '}
           <a className="link" href="https://github.com/gumirus/about_me">
             GitHub
           </a>
         </li>
         <li>
           <a className="link" href="mailto:gumirus@yandex.ru">
-            Gmail
+            Email
           </a>
         </li>
         <li>

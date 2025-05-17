@@ -5,7 +5,6 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
-  // Определение мобильного устройства
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 750)
     checkMobile()
@@ -13,7 +12,6 @@ export default function Header() {
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
-  // Закрытие меню при клике вне области
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (isMenuOpen && !e.target.closest('nav')) {
@@ -39,7 +37,6 @@ export default function Header() {
       <h2 className="text-xl font-bold">Ruslan Gumirov</h2>
 
       <nav className="relative">
-        {/* Гамбургер-кнопка */}
         {isMobile && (
           <button
             className={`hamburger ${isMenuOpen ? 'open' : ''}`}
@@ -48,6 +45,7 @@ export default function Header() {
               setIsMenuOpen(!isMenuOpen)
             }}
             aria-label="Menu"
+            aria-expanded={isMenuOpen}
           >
             <span className="hamburger-line"></span>
             <span className="hamburger-line"></span>
@@ -55,7 +53,6 @@ export default function Header() {
           </button>
         )}
 
-        {/* Список ссылок */}
         <ul
           className={`link-list ${isMobile ? 'mobile-menu' : ''} ${
             isMenuOpen ? 'open' : ''

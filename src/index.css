@@ -16,34 +16,62 @@
   --font-weight-light: 300;
 }
 
-/* Utility for reusable layout, not Tailwindable */
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .body-content {
   font-family: var(--font-family);
   background-color: var(--main-bg);
   color: var(--black);
-  padding: 4px 9%;
   display: flex;
   flex-direction: column;
   justify-content: start;
-  align-items: stretch;
+  align-items: center;
   gap: 130px;
   font-size: 16px;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  box-sizing: border-box;
 }
-
-/* Apply this class in a top-level div like <main className="body-content"> */
 
 .link {
-  @apply text-[var(--black)] no-underline;
+  @apply text-[var(--black)] no-underline relative pb-[3px];
 }
+
 .link:hover,
+.link:focus,
 .link:active {
   @apply text-[var(--black)];
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--main-yellow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+}
+
+.link:hover::after,
+.link:focus::after,
+.link.active::after {
+  transform: scaleX(1);
 }
 
 .link-list,
 .contact-list {
   @apply flex flex-row justify-start items-center gap-2 list-none;
 }
+
 
 .skills-ul {
   @apply list-none pl-0;
@@ -64,14 +92,6 @@
 .section-info {
   background-color: var(--main-card);
   @apply flex flex-col rounded-2xl p-8 relative min-w-[60%] max-w-[60%];
-
-  /* Новые стили для мобилок */
-  @media (max-width: 750px) {
-    min-width: 95% !important;
-    max-width: 95% !important;
-    margin: 10px auto;
-    padding: 20px 15px;
-  }
 }
 
 .section-subinfo {
@@ -127,6 +147,12 @@
 
 .footer-content {
   @apply flex flex-row justify-between items-center mt-10 mb-8;
+  position: relative; /* изменено: убрал absolute */
+  bottom: auto; /* сброс */
+  left: auto; /* сброс */
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .ResultUniversity-img {
@@ -157,193 +183,12 @@
   @apply underline;
 }
 
-/* Responsive breakpoints */
-@media (max-width: 1028px) {
-  body,
-  ul,
-  h1 {
-    font-size: 15px;
-    padding: 15px;
-  }
-
-  .header-info {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .main-img {
-    width: 300px;
-    height: 300px;
-  }
-
-  .img-container::before {
-    width: 110%;
-    height: 60%;
-    top: 25%;
-  }
-
-  .img-container::after {
-    width: 120%;
-    height: 200px;
-    top: 15%;
-  }
-}
-
-@media (max-width: 870px) {
-  body,
-  ul,
-  h1,
-  h2 {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .header-info {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .main-img {
-    width: 250px;
-    height: 250px;
-  }
-
-  .img-container::before {
-    width: 100%;
-    height: 60%;
-    top: 20%;
-  }
-
-  .img-container::after {
-    width: 100%;
-    height: 150px;
-    top: 10%;
-  }
-}
-
-@media (max-width: 750px) {
-  body,
-  ul,
-  h1,
-  h2 {
-    font-size: 13px;
-    padding: 5px;
-  }
-
-  .header-info {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .main-img {
-    width: 200px;
-    height: 200px;
-  }
-
-  .img-container::before {
-    width: 90%;
-    height: 40%;
-    top: 35%;
-  }
-
-  .img-container::after {
-    width: 90%;
-    height: 120px;
-    top: 15%;
-  }
-
-  .link-list,
-  .contact-list,
-  .footer-content {
-    flex-direction: column;
-    align-items: start;
-  }
-
-  .section-greetings {
-    flex-direction: column;
-    align-items: start;
-  }
-
-  .contact-list.mobile-menu {
-    @apply hidden absolute bottom-full left-0 mb-2 bg-[var(--main-bg)] 
-           shadow-lg rounded-lg p-4 flex-col gap-3 z-50 items-start;
-    width: 95%;
-    margin-left: 2.5%;
-    animation: slideFromLeft 0.3s ease;
-  }
-
-  .footer-content {
-    @apply flex-col gap-2 relative;
-  }
-
-  .footer-mobile-container {
-    @apply w-full flex justify-between items-center px-4;
-  }
-
-  .contact-list.mobile-menu {
-    @apply hidden absolute bottom-full right-4 left-4 mb-2 bg-[var(--main-bg)] 
-           shadow-lg rounded-lg p-4 flex-col gap-3 z-50;
-    animation: slideUp 0.3s ease;
-  }
-
-  .contact-list.mobile-menu.open {
-    @apply flex;
-  }
-
-  @keyframes slideFromLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  .hamburger {
-    @apply static;
-  }
-}
-
-.section-info {
-  @media (max-width: 750px) {
-    min-width: 95%;
-    max-width: 95%;
-    margin: 10px auto;
-    padding: 20px 15px;
-  }
-}
-
 .greetings-bold-line {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 0 2px;
   border-bottom: 2px solid var(--main-green);
 }
 
-.link {
-  /* ... существующие стили ... */
-  position: relative;
-  padding-bottom: 3px;
-}
-
-.link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--main-yellow);
-  transform: scaleX(0);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.link.active::after {
-  transform: scaleX(1);
-}
-
-/* Гамбургер-меню */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -371,25 +216,24 @@
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Мобильное меню */
-.link-list.mobile-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
+.link-list.mobile-menu,
+.contact-list.mobile-menu {
+  @apply hidden absolute flex-col gap-6 w-[200px] bg-[var(--main-bg)] shadow-lg rounded-lg p-4 max-h-[70vh] overflow-y-auto;
   right: 0;
-  background: var(--main-bg);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 1rem;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 200px;
+  top: 100%;
   z-index: 999;
+  animation: slideDown 0.3s ease;
 }
 
-.link-list.mobile-menu.open {
-  display: flex;
-  animation: slideDown 0.3s ease;
+.link-list.mobile-menu.open,
+.contact-list.mobile-menu.open {
+  @apply flex;
+}
+
+.footer-content .mobile-menu {
+  top: auto;
+  bottom: 100%;
+  animation: slideUp 0.3s ease;
 }
 
 @keyframes slideDown {
@@ -403,17 +247,140 @@
   }
 }
 
-@media (max-width: 750px) {
-  .hamburger {
-    display: flex;
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-
-  .link-list:not(.mobile-menu) {
-    display: none;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.contact-list.mobile-menu {
-  max-height: 70vh;
-  overflow-y: auto;
+@media (max-width: 1028px) {
+  .header-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-img {
+    width: 300px;
+    height: 300px;
+  }
+  .img-container::before {
+    width: 110%;
+    height: 60%;
+    top: 25%;
+  }
+  .img-container::after {
+    width: 120%;
+    height: 200px;
+    top: 15%;
+  }
+}
+
+@media (max-width: 870px) {
+  .header-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-img {
+    width: 250px;
+    height: 250px;
+  }
+  .img-container::before {
+    width: 100%;
+    height: 60%;
+    top: 20%;
+  }
+  .img-container::after {
+    width: 100%;
+    height: 150px;
+    top: 10%;
+  }
+}
+
+@media (max-width: 750px) {
+  .header-info {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .main-img {
+    width: 200px;
+    height: 200px;
+  }
+  .img-container::before {
+    width: 90%;
+    height: 40%;
+    top: 35%;
+  }
+  .img-container::after {
+    width: 90%;
+    height: 120px;
+    top: 15%;
+  }
+  .link-list:not(.mobile-menu),
+  .contact-list:not(.mobile-menu) {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .footer-content {
+    @apply flex-col gap-2 relative;
+  }
+  .footer-mobile-container {
+    @apply w-full flex justify-between items-center px-4;
+  }
+  .section-greetings {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .section-info {
+    min-width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
+  }
+}
+
+/* --- Основное: одинаковая высота и выравнивание для хедера и футера --- */
+
+.header-info,
+.footer-content {
+  height: 60px; /* фиксированная высота */
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center; /* вертикальное центрирование */
+  justify-content: space-between;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  background-color: var(--main-bg);
+  border-bottom: 1px solid #ddd;
+}
+
+.footer-mobile-container,
+.header-info h2 {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+@media (max-width: 750px) {
+  .header-info,
+  .footer-content {
+    height: 50px;
+    padding: 0 0.75rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .footer-mobile-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+  }
 }
