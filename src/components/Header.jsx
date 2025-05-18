@@ -34,7 +34,7 @@ export default function Header() {
 
   return (
     <header className="header-info">
-      <h2 className="text-xl font-bold">Ruslan Gumirov</h2>
+      <h1 className="text-xl font-bold">Ruslan Gumirov</h1>
 
       <nav className="relative">
         {isMobile && (
