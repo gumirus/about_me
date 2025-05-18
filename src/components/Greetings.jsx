@@ -5,7 +5,7 @@ export default function Greetings() {
         <span className="greetings-first-line">
           I'm Ruslan Gumirov. Full-Stack Developer
         </span>
-        <h1>
+        <h2>
           Crafting digital experiences
           <br />
           from <span className="greetings-second-line">Frontend</span> to
@@ -15,7 +15,7 @@ export default function Greetings() {
           <span className="greetings-second-line">HTML</span>,
           <span className="greetings-second-line">CSS</span>,
           <span className="greetings-second-line">JS</span>.
-        </h1>
+        </h2>
         <span className="greetings-third-line">
           <span className="greetings-bold-line">
             Synergy University student | Web Development

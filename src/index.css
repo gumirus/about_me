@@ -156,11 +156,26 @@ body {
   margin-left: 15px;
 }
 
+.greetings-first-line{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h2{
+  margin-top: 10px;
+  margin-bottom: 7px;
+}
+
 .section-greetings {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+}
+
+.greetings-third-line{
+  margin-top: 27px;
+  margin-bottom: 18px;
 }
 
 .main-img {
