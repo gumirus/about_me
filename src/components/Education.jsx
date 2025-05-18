@@ -21,7 +21,7 @@ export default function Education() {
           },
         ].map((edu, idx) => (
           <div className="section-subinfo" key={idx}>
-            <div className="circle" />
+            {/* <div className="circle" /> */}
             <div className="info-text">
               <span className="info-text-header">{edu.title}</span>
               <span className="info-text-date">{edu.date}</span>

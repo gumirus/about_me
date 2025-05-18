@@ -10,7 +10,7 @@ export default function App() {
   useSmoothScroll()
   return (
     <div className="body-content">
-      <div className="container max-w-3xl mx-auto px-3">
+      <div className="container max-w-4xl mx-auto px-3">
         <main className="py-10 text-gray-800 scroll-smooth">
           <Header />
           <Greetings />

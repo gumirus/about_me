@@ -14,6 +14,10 @@
   --font-weight-bold: 600;
   --font-weight-regular: 400;
   --font-weight-light: 300;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-8: 2rem;
+  --rounded-2xl: 1rem;
 }
 
 body {
@@ -86,46 +90,87 @@ body {
 }
 
 .main-content {
-  @apply flex flex-col gap-[50px] justify-start items-stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
 .section-content {
-  @apply flex flex-col justify-start items-center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .section-info {
   background-color: var(--main-card);
-  @apply flex flex-col rounded-2xl p-8 relative min-w-[60%] max-w-[60%];
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  padding: 2rem;
+  position: relative;
+  min-width: 60%;
+  max-width: 60%;
 }
 
 .section-subinfo {
-  @apply flex gap-1;
+  display: flex;
+  gap: 0.25rem;
 }
 
 .info-text {
-  @apply flex flex-col flex-[1_1_calc(100%-12px)];
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 calc(100% - 12px);
+}
+
+.project-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .circle {
   background-color: var(--main-yellow);
-  @apply rounded-full h-3 flex-[1_1_12px] mt-1;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.link.cv-link {
+  display: inline-block;
+  padding: 0.25rem 0;
 }
 
 .greetings {
-  @apply flex flex-col items-start justify-start gap-2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
   margin-top: 30px;
 }
 
 .section-greetings {
-  @apply flex flex-row justify-between items-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .main-img {
-  @apply w-[330px] h-[330px] z-[3];
+  width: 330px;
+  height: 330px;
+  position: relative;
+  z-index: 3;
 }
 
 .img-container {
-  @apply relative;
+  position: relative;
 }
 .img-container::before {
   background-color: var(--main-green);
@@ -136,7 +181,7 @@ body {
   width: 120%;
   height: 70%;
   border-radius: 20px;
-  z-index: -1;
+  z-index: 1;
 }
 .img-container::after {
   background-color: var(--main-yellow);
@@ -145,7 +190,7 @@ body {
   width: 135%;
   height: 230px;
   border-radius: 20px;
-  z-index: -2;
+  z-index: 0;
   right: 0;
   top: 20%;
 }
@@ -263,27 +308,6 @@ body {
   }
 }
 
-/* @media (max-width: 770px) {
-  .header-info {
-    flex-direction: column;
-    align-items: center;
-  }
-  .main-img {
-    width: 250px;
-    height: 250px;
-  }
-  .img-container::before {
-    width: 100%;
-    height: 60%;
-    top: 20%;
-  }
-  .img-container::after {
-    width: 100%;
-    height: 150px;
-    top: 10%;
-  }
-} */
-
 @media (max-width: 750px) {
   .header-info {
     flex-direction: row;
@@ -292,15 +316,17 @@ body {
   .main-img {
     width: 300px;
     height: 300px;
+    /* margin-left: 20px;
+    margin-bottom: 20px; */
   }
   .img-container::before {
-    width: 90%;
-    height: 40%;
+    width: 87%;
+    height: 50%;
     top: 35%;
   }
   .img-container::after {
-    width: 90%;
-    height: 120px;
+    width: 95%;
+    height: 180px;
     top: 15%;
   }
   .link-list:not(.mobile-menu),
@@ -326,19 +352,17 @@ body {
   }
 }
 
-/* --- Основное: одинаковая высота и выравнивание для хедера и футера --- */
-
 .header-info,
 .footer-content {
-  height: 60px; /* фиксированная высота */
+  height: 60px;
   display: flex;
   flex-wrap: nowrap;
-  align-items: center; /* вертикальное центрирование */
+  align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
   box-sizing: border-box;
   background-color: var(--main-bg);
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--main-yellow);
 }
 
 .footer-mobile-container,
