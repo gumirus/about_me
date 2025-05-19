@@ -22,28 +22,28 @@ export default function Projects() {
     },
   ]
 
-  return (
+    return (
     <section className="section-content" id="projects">
       <h2 className="text-xl font-semibold">Projects</h2>
       <div className="section-info">
         <div className="section-subinfo">
-          <div className="info-text">
+          <ul className="project-list">
             {projects.map((project, index) => (
-              <div key={index} className="project-item">
+              <li key={index} className="project-item">
                 <div className="circle" />
                 <a
-                  className="link cv-link"
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="project-link"
                 >
                   {project.title}
                 </a>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>
-  )
+  );
 }
