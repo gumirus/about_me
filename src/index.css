@@ -526,3 +526,12 @@ h2 {
     gap: 0.5rem;
   }
 }
+
+/* sections Header */
+.header-info {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-hidden {
+  transform: translateY(-100%);
+}

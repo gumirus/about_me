@@ -4,6 +4,8 @@ export default function Header() {
   const [activeLink, setActiveLink] = useState('')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 750)
@@ -11,6 +13,26 @@ export default function Header() {
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isMenuOpen) return // Не скрываем хедер если открыто меню
+
+      const currentScrollY = window.scrollY
+
+      if (currentScrollY > lastScrollY) {
+        // Скролл вниз
+        setIsVisible(false)
+      } else {
+        // Скролл вверх
+        setIsVisible(true)
+      }
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY, isMenuOpen])
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -33,7 +55,7 @@ export default function Header() {
   }
 
   return (
-    <header className="header-info">
+    <header className={`header-info ${!isVisible ? 'header-hidden' : ''}`}>
       <h1 className="text-xl font-bold">Ruslan Gumirov</h1>
 
       <nav className="relative">
@@ -43,6 +65,7 @@ export default function Header() {
             onClick={(e) => {
               e.stopPropagation()
               setIsMenuOpen(!isMenuOpen)
+              setIsVisible(true) // Показываем хедер при открытии меню
             }}
             aria-label="Menu"
             aria-expanded={isMenuOpen}
