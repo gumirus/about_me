@@ -19,7 +19,7 @@ export default function Education() {
             date: 'June 2024 - Today',
             desc: 'Student Frontend Developer',
           },
-                    {
+          {
             title: 'School 21',
             date: 'October 2025 - Today',
             desc: 'The foundation of the Sber School',
