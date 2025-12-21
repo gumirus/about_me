@@ -11,13 +11,18 @@ export default function Education() {
           },
           {
             title: 'Synergy University',
-            date: 'October 2023 - Today',
+            date: 'October 2023/28 - Today',
             desc: 'Student Web Developer',
           },
           {
             title: 'The Rolling Scopes School',
             date: 'June 2024 - Today',
             desc: 'Student Frontend Developer',
+          },
+                    {
+            title: 'School 21',
+            date: 'October 2025 - Today',
+            desc: 'The foundation of the Sber School',
           },
         ].map((edu, idx) => (
           <div className="section-subinfo" key={idx}>
