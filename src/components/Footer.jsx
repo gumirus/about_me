@@ -21,10 +21,12 @@ export default function Footer() {
     return () => document.removeEventListener('click', handleClickOutside)
   }, [isMenuOpen])
 
+  const currentYear = new Date().getFullYear()
+
   return (
     <footer className="footer-content" id="contacts">
       <div className="footer-mobile-container">
-        <span className="copyright">© 2025 by Ruslan Gumirov</span>
+        <span className="copyright">© {currentYear} by Ruslan Gumirov</span>
 
         {isMobile && (
           <button
